@@ -41,7 +41,7 @@ pip install -r requirements.txt
 pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 ```
 
-**to run CLAP and DEfNet scores install pythorch:**
+**to run CLAP and DEfNet scores install pythorch...**
 
 ```
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html 
@@ -49,17 +49,19 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu1
 # note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
 ### for H100 GPU: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
+**... and download corresponding models**
+ 
+```
+cd src 
+wget https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt
+wget https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
+```
 
-For CLAP-LAION, it is necessary to download the model and specify it's location at model.load_ckpt: 
-https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt
-
-
-Download Discogs-EffNet track scores and specify it's location: 
-https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
+> :warning: **Attention!** Note that if you would like to store the models elsewhere, you MUST change the location directory `model_path` at files [clap.py](mira_eval/clap.py) and [defnet.py](mira_eval/defnet.py). 
 
 ## contact & citation 
 
-Contact Roser Batlle Roca at <roser.batlle@upf.edu>
+Contact: Roser Batlle Roca at <roser.batlle@upf.edu>
 
 ```
 @article{batlleroca2024towards,
