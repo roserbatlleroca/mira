@@ -1,6 +1,6 @@
 # MiRA :eyes:
 
-MiRA (**M**us**i**c **R**eplication **A**ssessment) tool is a model-independent open evaluation method based on four diverse audio music similarity metrics to assess exact data replication of the training set. 
+MiRA (<p style="color:orange">**M**</p>us<p style="color:orange">**i**</p>c <p style="color:orange">**R**</p>eplication <p style="color:orange">**A**</p>ssessment) tool is a model-independent open evaluation method based on four diverse audio music similarity metrics to assess exact data replication of the training set. 
 
 For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](url-missing). 
 
@@ -57,7 +57,7 @@ https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_
 Download Discogs-EffNet track scores and specify it's location: 
 https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
 
-## Contact & Citation 
+## contact & citation 
 
 Contact Roser Batlle Roca at <roser.batlle@upf.edu>
 
