@@ -168,8 +168,12 @@ for a in range(len(audio_file_A)):
         print(clap_result.item())
         matrix_results.append([audio_file_A[a].split('/')[-1].split('.')[0], audio_file_B[b].split('/')[-1].split('.')[0], clap_result.item()])
 
-print(matrix_results)
 df = pd.DataFrame(matrix_results, columns=["songA", "songB", "clap_score"])
+
+clap_mean = df['clap_score'].mean()
+clap_median = df['clap_score'].median()
+print("Mean CLAP score:", clap_mean)
+print("Median CLAP score:", clap_median)
 
 
 if LOG_ACTIVE is True: 
