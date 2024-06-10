@@ -136,5 +136,5 @@ if LOG_ACTIVE is True:
 end = datetime.now()
 time = end - now
 
-print('Elapsed time: ', time)
-print('\n** END! **')
+print('\nElapsed time: ', time)
+print('\n** Done! **\n')
