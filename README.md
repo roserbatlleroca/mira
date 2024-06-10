@@ -1,11 +1,20 @@
-# MiRA
+# MiRA :eyes:
 
-## clone MiRA repository 
+MiRA (Music Replication Assessment) tool is a model-independent open evaluation method based on four diverse audio music similarity metrics to assess exact data replication of the training set. 
 
-Clone GitHub repository:
+For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](url-to-complete). 
+
+## quick start (todo!)
+
+Install MiRA PyPi package: 
 ```
-git clone https://github.com/roserbatlleroca/mira.git
+pip install mira
 ```
+
+**how to use MiRA? (todo)**
+
+< examples >
+< instructions >
 
 ## environment settings
 If you want to deep in MiRA tool instead of directly using the pip library, you need to install the appropiate environment. Please, run the following commands: 
@@ -13,6 +22,7 @@ If you want to deep in MiRA tool instead of directly using the pip library, you 
 ```
 # clone github repository:
 git clone https://github.com/roserbatlleroca/mira.git
+cd mira
 
 # create and install conda environment 
 conda create --name mira python=3.10
@@ -38,3 +48,5 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu1
 It is necessary to download the model and specify it's location at model.load_ckpt: 
 https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt
 
+
+**to run DEfNet score**
