@@ -65,8 +65,8 @@ LOG_ACTIVE = False if log == 'no' else True
 ##############################################################################################################################################################
 
 # Getting songs in the directory 
-song_list_A = glob.glob(folder_A + '*.wav')[0:2]
-song_list_B = glob.glob(folder_B + '*.wav')[0:2]
+song_list_A = glob.glob(folder_A + '*.wav')
+song_list_B = glob.glob(folder_B + '*.wav')
 
 song_chromogram_A = []
 song_chromogram_B = []
