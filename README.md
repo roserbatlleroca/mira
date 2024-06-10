@@ -31,6 +31,7 @@ cd mira
 ```
 
 **create and install conda environment**
+```
 conda create --name mira python=3.10
 conda activate mira
 python -m pip install --upgrade pip
@@ -42,13 +43,13 @@ pip install -r requirements.txt
 pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 ```
 
-**to run CLAP and DEfNet scores install pythorch: **
+**to run CLAP and DEfNet scores install pythorch:**
 
 ```
 # note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html 
 
-## for H100 GPU: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+### for H100 GPU: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 For CLAP-LAION, it is necessary to download the model and specify it's location at model.load_ckpt: 
