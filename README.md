@@ -41,7 +41,8 @@ pip install -r requirements.txt
 pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 ```
 
-**to run CLAP score**
+**to run CLAP and DEfNet scores**
+
 ```
 # install pythorch
 # note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
@@ -50,11 +51,9 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu1
 ## for H100 GPU: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
-It is necessary to download the model and specify it's location at model.load_ckpt: 
+For CLAP-LAION, it is necessary to download the model and specify it's location at model.load_ckpt: 
 https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt
 
-
-**to run DEfNet score**
 
 Download Discogs-EffNet track scores and specify it's location: 
 https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
