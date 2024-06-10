@@ -5,8 +5,7 @@ MiRA (**M**us**i**c **R**eplication **A**ssessment) tool is a model-independent 
 For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](url-missing). 
 
 
-Contact: 
-<ul><li>Roser Batlle Roca: <roser.batlle@upf.edu></li></ul>
+Contact: Roser Batlle Roca -- <roser.batlle@upf.edu>
 
 ## quick start (todo!)
 
