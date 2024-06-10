@@ -1,5 +1,4 @@
 src/music_audioset_epoch_15_esc_90.14.pt
 src/discogs_track_embeddings-effnet-bs64-1.pb
 mira_eval/kld.py
-mira_eval/defnet.py
 mira_eval/coverid.py
