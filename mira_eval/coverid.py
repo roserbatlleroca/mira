@@ -70,7 +70,7 @@ song_list_B = glob.glob(folder_B + '*.wav')
 
 song_chromogram_A = []
 song_chromogram_B = []
-ccs_AB = []
+matrix_results = []
 
 print("\nGetting samples chronograms...")
 # Obtaining chromograms 
@@ -110,14 +110,9 @@ for a in range(len(song_chromogram_A)):
                                                 distanceType='asymmetric')(ccs)
         
         
-        ccs_AB.append((song_chromogram_A[a][0], song_chromogram_B[b][0], cs_distance))
+        matrix_results.append((song_chromogram_A[a][0].split('.')[0], song_chromogram_B[b][0].split('.')[0], cs_distance))
 
-# Store Cross Matrix in an external file
-header = ['SongA', 'SongB', 'CoverID']
-
-df = pd.DataFrame(ccs_AB, columns=['songA', 'songB', 'coverID'])
-
-print("Storing results for AB")
+df = pd.DataFrame(matrix_results, columns=['songA', 'songB', 'coverID'])
 
 # Calulate mean and median distances 
 coverid_mean = df['coverID'].mean()
@@ -126,18 +121,18 @@ print("Mean CoverID score:", coverid_mean)
 print("Median CoverID score:", coverid_median)
 
 if LOG_ACTIVE is True: 
-    with open('log/{}_ccs-gt-matrix-distance.csv'.format(eval_name), 'w') as f: 
+    with open('log/{}_coverid.csv'.format(eval_name), 'w') as f: 
         writer = csv.writer(f)
-        writer.writerow(header)
-        for r in range(len(ccs_AB)): 
-            writer.writerow([ccs_AB[r][0], ccs_AB[r][1], ccs_AB[r][2]])
+        writer.writerow(['songA', 'songB', 'coverID'])
+        for r in range(len(matrix_results)): 
+            writer.writerow([matrix_results[r][0], matrix_results[r][1], matrix_results[r][2]])
 
     
      # global file with all results 
     if os.path.exists('log/{}_allresults.csv'.format(eval_name)): 
         print('file exists: adding CoverID score results')
         data = pd.read_csv('log/{}_allresults.csv'.format(eval_name)) 
-        for r in ccs_AB: 
+        for r in matrix_results: 
             mask = (data['songA'] == r[0]) & (data['songB'] == r[1])
             data.loc[mask, 'coverID'] = r[2]
     else: 
