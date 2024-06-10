@@ -18,7 +18,7 @@ pip install mira
 
 < examples >
 
-:warning: **Important!** Note that MiRA is prepared to interpret `wav`files.  
+:warning: **Important!** Note that MiRA is prepared to interpret `wav` files.  
 
 ## environment settings
 If you want to deep in MiRA tool instead of directly using the pip library, you need to install the appropiate environment. Please, run the following commands: 
