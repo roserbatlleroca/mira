@@ -65,8 +65,10 @@ wget https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_t
 To execute the evaluation metrics, run the following command specifying the metric (`coverid`, `clap`, `defnet` or `kld`), the directory of the reference folder (`a_dir`), the target folder (`b_dir`) and name of the evaluation or test (`eval_name`). Log is active by default. You can deactivate storing the results by setting log to `no`.  
 
 ```
-python {metric_name}.py -a {a_dir} -b {b_dir} --eval_name {eval_name} --log {yes/no}
+python mira_eval/{metric_name}.py -a {a_dir} -b {b_dir} --eval_name {eval_name} --log {yes/no}
 ```
+
+For KL divergence, you can also specify pretraining length by adding `--prelen {10,20,30}`. By default, it is set to 10 seconds as the original PaSST was trained on AudioSet with 10s-long audio samples. 
 
 ## citation 
 
