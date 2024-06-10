@@ -5,8 +5,6 @@ MiRA (**M**us**i**c **R**eplication **A**ssessment) tool is a model-independent 
 For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](url-missing). 
 
 
-Contact: Roser Batlle Roca -- <roser.batlle@upf.edu>
-
 ## quick start (todo!)
 
 Install MiRA PyPi package: 
@@ -38,7 +36,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-**to run KL divergenc download [PaSST](https://github.com/kkoutini/PaSST?tab=readme-ov-file#passt-efficient-training-of-audio-transformers-with-patchout) classifier**
+**to run KL divergence download [PaSST](https://github.com/kkoutini/PaSST?tab=readme-ov-file#passt-efficient-training-of-audio-transformers-with-patchout) classifier**
 ```
 pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 ```
@@ -46,9 +44,9 @@ pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 **to run CLAP and DEfNet scores install pythorch:**
 
 ```
-# note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html 
 
+# note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
 ### for H100 GPU: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
@@ -59,7 +57,9 @@ https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_
 Download Discogs-EffNet track scores and specify it's location: 
 https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
 
-## Citation 
+## Contact & Citation 
+
+Contact Roser Batlle Roca at <roser.batlle@upf.edu>
 
 ```
 @article{batlleroca2024towards,
