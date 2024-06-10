@@ -61,17 +61,13 @@ wget https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_t
 
 ## running evaluation metrics
 
-To execute the evaluation metrics, run the following command specifying the directory of the reference folder (`a_dir`), the target folder (`b_dir`) and name of the evaluation or test (`eval_name`). You can deactivate storing the results by setting log to `no`.  
+To execute the evaluation metrics, run the following command specifying the metric (`coverid`, `clap`, `defnet` or `kld`), the directory of the reference folder (`a_dir`), the target folder (`b_dir`) and name of the evaluation or test (`eval_name`). Log is active by default. You can deactivate storing the results by setting log to `no`.  
 
 ```
 python {metric_name}.py -a {a_dir} -b {b_dir} --eval_name {eval_name} --log {yes/no}
 ```
 
-
-
-## contact & citation 
-
-Contact: Roser Batlle Roca at <roser.batlle@upf.edu>
+## citation 
 
 ```
 @article{batlleroca2024towards,
