@@ -13,8 +13,10 @@ pip install mira
 
 **how to use MiRA? (todo)**
 
-< examples >
 < instructions >
+
+< examples >
+
 
 ## environment settings
 If you want to deep in MiRA tool instead of directly using the pip library, you need to install the appropiate environment. Please, run the following commands: 
@@ -50,3 +52,5 @@ https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_
 
 
 **to run DEfNet score**
+Download Discogs-EffNet track scores and specify it's location: 
+https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
