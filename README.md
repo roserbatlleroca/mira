@@ -24,27 +24,27 @@ pip install mira
 ## environment settings
 If you want to deep in MiRA tool instead of directly using the pip library, you need to install the appropiate environment. Please, run the following commands: 
 
+**clone github repository:**
 ```
-# clone github repository:
 git clone https://github.com/roserbatlleroca/mira.git
 cd mira
+```
 
-# create and install conda environment 
+**create and install conda environment**
 conda create --name mira python=3.10
 conda activate mira
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-**to run KL divergence**
+**to run KL divergenc download [PaSST](https://github.com/kkoutini/PaSST?tab=readme-ov-file#passt-efficient-training-of-audio-transformers-with-patchout) classifier**
 ```
 pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 ```
 
-**to run CLAP and DEfNet scores**
+**to run CLAP and DEfNet scores install pythorch: **
 
 ```
-# install pythorch
 # note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html 
 
