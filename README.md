@@ -57,7 +57,7 @@ wget https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15
 wget https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
 ```
 
-> :warning: **Attention!** Note that if you would like to store the models elsewhere, you MUST change the location directory `model_path` at files [clap.py](mira_eval/clap.py) and [defnet.py](mira_eval/defnet.py). 
+:warning: **Attention!** Note that if you would like to store the models elsewhere, you MUST change the location directory `model_path` at files [clap.py](mira_eval/clap.py) and [defnet.py](mira_eval/defnet.py). 
 
 ## contact & citation 
 
