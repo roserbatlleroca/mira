@@ -59,6 +59,16 @@ wget https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_t
 
 :warning: **Attention!** Note that if you would like to store the models elsewhere, you MUST change the location directory `model_path` at files [clap.py](mira_eval/clap.py) and [defnet.py](mira_eval/defnet.py). 
 
+## running evaluation metrics
+
+To execute the evaluation metrics, run the following command specifying the directory of the reference folder (`a_dir`), the target folder (`b_dir`) and name of the evaluation or test (`eval_name`). You can deactivate storing the results by setting log to `no`.  
+
+```
+python {metric_name}.py -a {a_dir} -b {b_dir} --eval_name {eval_name} --log {yes/no}
+```
+
+
+
 ## contact & citation 
 
 Contact: Roser Batlle Roca at <roser.batlle@upf.edu>
