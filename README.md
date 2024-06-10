@@ -4,6 +4,10 @@ MiRA (Music Replication Assessment) tool is a model-independent open evaluation 
 
 For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](url-to-complete). 
 
+
+Contact: 
+<ul><li>Roser Batlle Roca: roser.batlle@upf.edu.</li></ul>
+
 ## quick start (todo!)
 
 Install MiRA PyPi package: 
@@ -52,5 +56,19 @@ https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_
 
 
 **to run DEfNet score**
+
 Download Discogs-EffNet track scores and specify it's location: 
 https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
+
+## Citation 
+
+```
+@article{batlleroca2024towards,
+  title={Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio},
+  author={Batlle-Roca, Roser and Liao, Wei-Hsiang and Serra, Xavier
+  and Mitsufuji, Yuki and Gómez, Emilia},
+  journal={arXiv preprint arXiv:tbd},
+  year={2024}
+}
+```
+
