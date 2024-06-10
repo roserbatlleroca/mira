@@ -69,7 +69,7 @@ LOG_ACTIVE = False if log == 'no' else True
 # Upload CLAP pretrained model 
 print("\nUploading CLAP-LAION model...\n")
 
-# IMPORTANT! Specify the correct path to the pretriened weights 
+# IMPORTANT! Specify the correct path to the pretrained weights 
 model = laion_clap.CLAP_Module(enable_fusion=False, amodel= 'HTSAT-base')
 model_path = "./src/music_audioset_epoch_15_esc_90.14.pt"
 model.load_ckpt(model_path)
@@ -79,8 +79,8 @@ model.load_ckpt(model_path)
 # model.load_ckpt() # download the default pretrained checkpoint.
 
 # Group A & B 
-audio_file_A = glob.glob(folder_A + '*.wav')[0:2]
-audio_file_B = glob.glob(folder_B + '*.wav')[0:2]
+audio_file_A = glob.glob(folder_A + '*.wav')
+audio_file_B = glob.glob(folder_B + '*.wav')
 
 matrix_results = []
 
@@ -196,5 +196,5 @@ if LOG_ACTIVE is True:
 end = datetime.now()
 time = end - now
 
-print('Elapsed time: ', time)
-print('\n** END! **')
+print('\nElapsed time: ', time)
+print('\n** Done! **\n')
