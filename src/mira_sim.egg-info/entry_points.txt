@@ -1,0 +1,2 @@
+[console_scripts]
+mira = mira_sim.main:main

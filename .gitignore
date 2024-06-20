@@ -1,3 +1,6 @@
-src/music_audioset_epoch_15_esc_90.14.pt
-src/discogs_track_embeddings-effnet-bs64-1.pb
-
+misc/music_audioset_epoch_15_esc_90.14.pt
+misc/discogs_track_embeddings-effnet-bs64-1.pb
+build/
+dist/
+src/mira_sim.egg-info/
+log/CMDL.txt

@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mira-sim"
+version = "0.1.1"
+dependencies = [
+    "pandas==2.1.4", 
+    "numpy==1.23.5", 
+    "essentia-tensorflow==2.1b6.dev1110", 
+    "scipy==1.11.4", 
+    "transformers==4.30.2", 
+    "laion-clap==1.1.4", 
+    "pydub==0.25.1", 
+    "torchmetrics==1.2.1", 
+    "julius==0.2.7"
+]
+requires-python = ">3.10"
+maintainers = [
+    {name = "Roser Batlle-Roca", email = "roser.batlle@upf.edu"}
+]
+description = "MiRA tool is a model-independent open evaluation method based on four diverse audio music similarity metrics to assess exact data replication of the training set."
+readme = "README.md"
+license  = {file = "COPYING"}
+
+[project.urls]
+Repository = "https://github.com/roserbatlleroca/mira/"
+
+[project.scripts]
+mira = "mira_sim.main:main"
+
+
