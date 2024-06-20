@@ -105,7 +105,7 @@ wget https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_t
 To execute the evaluation metrics, run the following command specifying the metric (`coverid`, `clap`, `defnet` or `kld`), the directory of the reference folder (`a_dir`), the target folder (`b_dir`) and name of the evaluation or test (`eval_name`). Log is active by default. You can deactivate storing the results by setting log to `no`.  
 
 ```
-cd src/mira
+cd src/mira_sim/
 python metrics/<metric_name>.py -a <a_dir> -b <b_dir> --eval_name <eval_name> {--log <no/folder_directory>}
 ```
 
