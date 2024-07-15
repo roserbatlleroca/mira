@@ -121,3 +121,43 @@ def coverid_eval(folder_A, folder_B, eval_name, log):
         
         data.to_csv('{}/{}_allresults.csv'.format(logdir, eval_name), index=False)
 
+
+#############################################################################################################################################################
+
+# Import information 
+parser = argparse.ArgumentParser(description='No help available.')
+
+# Input music 
+    # Where are the songs located? 
+    # groupA: reference group 
+parser.add_argument('--a_samples', '-a', help='Indicate A samples directory.', required=True)
+
+    # groupB: target group 
+parser.add_argument('--b_samples', '-b', help='Indicate B samples directory.', required=True)
+
+    # What was the code name assigned for this evaluation? 
+parser.add_argument('--eval_name', help='Indicate eval name.', required=True)
+
+# Do you want to register this results into the log folder?  
+parser.add_argument('--log', help='Indicate if you do not want to register the results in the log folder or in which folder results should be stored.')
+
+args = parser.parse_args()
+
+folder_A = args.a_samples
+folder_B = args.b_samples
+eval_name = args.eval_name 
+log = args.log
+
+##############################################################################################################################################################
+
+# Set time count
+now = datetime.now()
+# Run evaluation 
+clap_eval(folder_A, folder_B, eval_name, log)
+
+# Total time 
+end = datetime.now()
+time = end - now
+
+print('\nElapsed time: ', time)
+print('\n** Done! **\n')
