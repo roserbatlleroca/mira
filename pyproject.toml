@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mira-sim"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
     "pandas==2.1.4", 
     "numpy==1.23.5", 
