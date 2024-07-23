@@ -2,7 +2,7 @@
 
 MiRA (**M**us**i**c **R**eplication **A**ssessment) tool is a model-independent open evaluation method based on four diverse audio music similarity metrics to assess exact data replication of the training set. 
 
-For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](). 
+For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](https://arxiv.org/abs/2407.14364). 
 
 
 ## quick start 
@@ -112,10 +112,12 @@ For KL divergence, you can also specify pretraining length by adding `--prelen <
 ```
 @article{batlleroca2024towards,
   title={Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio},
-  author={Batlle-Roca, Roser and Liao, Wei-Hsiang and Serra, Xavier
-  and Mitsufuji, Yuki and Gómez, Emilia},
-  journal={accepted at ISMIR 2024},
-  year={2024}
+  author={Roser Batlle-Roca and Wei-Hisang Liao and Xavier Serra and Yuki Mitsufuji and Emilia Gómez},
+  journal={Accepted at ISMIR 2024},
+  year={2024}, 
+  eprint={2407.14364},
+  archivePrefix={arXiv}, 
+  url={https://arxiv.org/abs/2407.14364}, 
 }
 ```
 
