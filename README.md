@@ -1,11 +1,11 @@
-# MiRA :eyes:
+# MiRA 👀
 
 MiRA (**M**us**i**c **R**eplication **A**ssessment) tool is a model-independent open evaluation method based on four diverse audio music similarity metrics to assess exact data replication of the training set. 
 
 For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](https://arxiv.org/abs/2407.14364). 
 
 
-## quick start 
+## 🚀 quick start 
 
 **create and install conda environment**
 ```
@@ -42,10 +42,10 @@ wget -O misc/music_audioset_epoch_15_esc_90.14.pt https://huggingface.co/lukewys
 wget -O misc/discogs_track_embeddings-effnet-bs64-1.pb https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
 ```
 
-:warning: **Attention!** MiRA expects to find weights in `misc` folder in the directory you run mira. Note that if you would like to store the models elsewhere, you MUST change the location directory `model_path` at files [clap.py](mira/metrics/clap.py) and [defnet.py](mira/metrics/defnet.py). 
+🚧 **Attention!** MiRA expects to find weights in `misc` folder in the directory you run mira. Note that if you would like to store the models elsewhere, you MUST change the location directory `model_path` at files [clap.py](mira/metrics/clap.py) and [defnet.py](mira/metrics/defnet.py). 
 
 
-### how to use MiRA?
+## 🧪 how to use MiRA?
 
 Run an evaluation by calling `mira` and indicating
 the directory of the reference folder (`reference_foldr`), the target folder (`target_folder`) and name of the evaluation or test (`eval_name`). 
@@ -61,7 +61,7 @@ mira <reference_folder> <target_folder> --eval_name <eval_name> {--log <no/log_d
 :warning: **Important!** Note that MiRA is prepared to interpret `wav` files.  
 
 
-## directly running evaluation metrics
+## 💻 directly running evaluation metrics
 If you want to deep in MiRA tool instead of directly using the pip library, you need to install the appropiate environment. Please, run the following commands: 
 
 **clone github repository:**
@@ -94,7 +94,7 @@ cd misc/
 wget https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt
 wget https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_track_embeddings-effnet-bs64-1.pb
 ```
-:warning: **Attention!** Note that if you would like to store the models elsewhere, you MUST change the location directory `model_path` at files [clap.py](mira/metrics/clap.py) and [defnet.py](mira/metrics/defnet.py). 
+🚧 **Attention!** Note that if you would like to store the models elsewhere, you MUST change the location directory `model_path` at files [clap.py](mira/metrics/clap.py) and [defnet.py](mira/metrics/defnet.py). 
 
 ### running evaluation metrics
 
@@ -107,7 +107,7 @@ python metrics/<metric_name>.py -a <a_dir> -b <b_dir> --eval_name <eval_name> {-
 
 For KL divergence, you can also specify pretraining length by adding `--prelen <10,20,30>`. By default, it is set to 10 seconds as the original PaSST was trained on AudioSet with 10s-long audio samples. 
 
-## citation 
+## 📚 citation 
 
 ```
 @article{batlleroca2024towards,
