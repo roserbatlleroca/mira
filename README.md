@@ -113,7 +113,8 @@ For KL divergence, you can also specify pretraining length by adding `--prelen <
 @article{batlleroca2024towards,
   title={Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio},
   author={Roser Batlle-Roca and Wei-Hisang Liao and Xavier Serra and Yuki Mitsufuji and Emilia Gómez},
-  journal={Accepted at ISMIR 2024},
+  journal={Proceedings of the 25th International Society for Music Information Retrieval Conference, San
+Francisco, United States},
   year={2024}, 
   eprint={2407.14364},
   archivePrefix={arXiv}, 
