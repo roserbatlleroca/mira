@@ -14,7 +14,7 @@ conda activate mira
 python -m pip install --upgrade pip
 ```
 
-**install mira package**
+**install [mira package](https://pypi.org/project/mira-sim/)**
 ```
 pip install mira-sim
 ```
