@@ -4,8 +4,8 @@
 
 # Cover song identification distance 
 
-# v1.0
-# last update: june 2024
+# v1.1
+# last update: dec 2024
 
 #########################################
 # Import modules ########################
@@ -108,10 +108,11 @@ def coverid_eval(folder_A, folder_B, eval_name, log):
                 writer.writerow([matrix_results[r][0], matrix_results[r][1], matrix_results[r][2]])
 
         
+        file_path = f"{logdir}/{eval_name}_allresults.csv"
         # global file with all results 
-        if os.path.exists('{}/{}_allresults.csv'.format(logdir, eval_name)): 
-            print('file exists: adding CoverID score results')
-            data = pd.read_csv('{}/{}_allresults.csv'.format(logdir, eval_name)) 
+        if os.path.exists(file_path): 
+            print('\nFile exists: adding CLAP score results')
+            data = pd.read_csv(file_path, dtype={'songA': str, 'songB': str})
             for r in matrix_results: 
                 mask = (data['songA'] == r[0]) & (data['songB'] == r[1])
                 data.loc[mask, 'coverID'] = r[2]

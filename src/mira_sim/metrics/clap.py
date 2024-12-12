@@ -5,8 +5,8 @@
 # CLAP score based on CLAP-LAION-Music 
 # Pre-trained model 
 
-# v1.0
-# last update: june 2024
+# v1.1
+# last update: dec 2024
 
 #########################################
 # Import modules ########################
@@ -22,9 +22,6 @@ import os
 import librosa
 import pandas as pd
 import math
-
-import argparse
-import datetime
 
 #######################################
 # CLAP funcitions #####################
@@ -83,6 +80,7 @@ def clap_eval(folder_A, folder_B, eval_name, log=None):
             split_length = int(round(len(audio_waveform)/splits, 0))
 
             offset = 0
+            segment_embeddings = []
             for s in range(splits):                     
                 segment = audio_waveform[offset:offset+split_length]
                 offset += split_length    
@@ -97,21 +95,24 @@ def clap_eval(folder_A, folder_B, eval_name, log=None):
                     audio_cfg=model.model_cfg['audio_cfg'],
                     require_grad=audio.requires_grad
                 )
-                audio_input.append(temp_dict)
-        
-            audio_embed_A = model.model.get_audio_embedding(audio_input)
-        
+                # Compute embedding for this segment
+                segment_embedding = model.model.get_audio_embedding([temp_dict])
+                segment_embeddings.append(segment_embedding)
+
+            # Aggregate embeddings (e.g., take the mean)
+            audio_embed_A = torch.mean(torch.stack(segment_embeddings), dim=0)
+
         else: audio_embed_A = model.get_audio_embedding_from_filelist(x=[audio_file_A[a]], use_tensor=True)
 
         for b in range(len(audio_file_B)): 
             audio_input = []
-            
             # load the waveform of the shape (T,), should resample to 48000
             audio_waveform, _ = librosa.load(audio_file_B[b], sr=48000)   
             if len(audio_waveform) > 480000: # len audio_embed is length (sec) * sr (48000)
                 splits = math.ceil(len(audio_waveform)/480000) # How many splits do we need?
                 split_length = int(round(len(audio_waveform)/splits, 0))
                 offset = 0
+                segment_embeddings = []
                 for s in range(splits):                     
                     segment = audio_waveform[offset:offset+split_length]
                     offset += split_length    
@@ -127,9 +128,12 @@ def clap_eval(folder_A, folder_B, eval_name, log=None):
                         audio_cfg=model.model_cfg['audio_cfg'],
                         require_grad=audio.requires_grad
                     )
-                    audio_input.append(temp_dict)
-            
-                audio_embed_B = model.model.get_audio_embedding(audio_input)
+                    # Compute embedding for this segment
+                    segment_embedding = model.model.get_audio_embedding([temp_dict])
+                    segment_embeddings.append(segment_embedding)
+
+                # Aggregate embeddings (e.g., take the mean)
+                audio_embed_B = torch.mean(torch.stack(segment_embeddings), dim=0)
 
             else: audio_embed_B = model.get_audio_embedding_from_filelist(x=[audio_file_B[b]], use_tensor=True)
 
@@ -148,6 +152,7 @@ def clap_eval(folder_A, folder_B, eval_name, log=None):
     print("Mean CLAP score:", clap_mean)
     print("Median CLAP score:", clap_median)
 
+    print(matrix_results)
 
     if LOG_ACTIVE is True: 
         if logdir == 'log': 
@@ -160,13 +165,17 @@ def clap_eval(folder_A, folder_B, eval_name, log=None):
             for s in range(len(matrix_results)): 
                 writer.writerow([matrix_results[s][0], matrix_results[s][1], matrix_results[s][2]])
         
+        file_path = f"{logdir}/{eval_name}_allresults.csv"
         # global file with all results 
-        if os.path.exists('{}/{}_allresults.csv'.format(logdir, eval_name)): 
-            print('\nfile exists: adding CLAP score results')
-            data = pd.read_csv('{}/{}_allresults.csv'.format(logdir, eval_name)) 
+        if os.path.exists(file_path): 
+            print('\nFile exists: adding CLAP score results')
+            data = pd.read_csv(file_path, dtype={'songA': str, 'songB': str})
             for r in matrix_results: 
+                # Create mask to find matching rows
                 mask = (data['songA'] == r[0]) & (data['songB'] == r[1])
-                data.loc[mask, 'clap_score'] = r[2]
+                for r in matrix_results: 
+                    mask = (data['songA'] == r[0]) & (data['songB'] == r[1])
+                    data.loc[mask, 'defnet_score'] = r[2]
         else: 
             print('\nmissing file: creating new file with CLAP score results')
             data = df

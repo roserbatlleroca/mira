@@ -5,8 +5,8 @@
 # DEfNet score based on track weights of 
 # Discogs-Effnet Essentia models 
 
-# v1.0
-# last update: june 2024
+# v1.1
+# last update: dec 2024
 
 #########################################
 # Import modules ########################
@@ -100,10 +100,11 @@ def defnet_eval(folder_A, folder_B, eval_name, log):
             for s in range(len(matrix_results)): 
                 writer.writerow([matrix_results[s][0], matrix_results[s][1], matrix_results[s][2]])
 
+        file_path = f"{logdir}/{eval_name}_allresults.csv"
         # global file with all results 
         if os.path.exists('{}/{}_allresults.csv'.format(logdir, eval_name)): 
             print('\nfile exists: adding DEfNet score results')
-            data = pd.read_csv('{}/{}_allresults.csv'.format(logdir, eval_name)) 
+            data = pd.read_csv(file_path, dtype={'songA': str, 'songB': str})
             for r in matrix_results: 
                 mask = (data['songA'] == r[0]) & (data['songB'] == r[1])
                 data.loc[mask, 'defnet_score'] = r[2]

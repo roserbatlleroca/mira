@@ -4,8 +4,8 @@
 
 # KL Divergence: Kullback-Leibler Divergence
 
-# v1.0
-# last update: june 2024
+# v1.1
+# last update: dec 2024
 
 #########################################
 # Import modules ########################
@@ -123,10 +123,11 @@ def kld_eval(folder_A, folder_B, eval_name, log, prelen):
             for r in range(len(all_kldiv)): 
                 writer.writerow([all_kldiv[r][0], all_kldiv[r][1], all_kldiv[r][2], all_kldiv[r][3], all_kldiv[r][4]])
 
+        file_path = f"{logdir}/{eval_name}_allresults.csv"
         # global file with all results 
-        if os.path.exists('{}/{}_allresults.csv'.format(logdir, eval_name)): 
-            print('\nfile exists: adding KL divergence results')
-            data = pd.read_csv('{}/{}_allresults.csv'.format(logdir, eval_name)) 
+        if os.path.exists(file_path): 
+            print('\nFile exists: adding CLAP score results')
+            data = pd.read_csv(file_path, dtype={'songA': str, 'songB': str})
             for r in all_kldiv: 
                 mask = (data['songA'] == r[0]) & (data['songB'] == r[1])
                 data.loc[mask, 'kl-div_AB'] = r[2]
