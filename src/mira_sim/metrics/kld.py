@@ -126,7 +126,7 @@ def kld_eval(folder_A, folder_B, eval_name, log, prelen):
         file_path = f"{logdir}/{eval_name}_allresults.csv"
         # global file with all results 
         if os.path.exists(file_path): 
-            print('\nFile exists: adding CLAP score results')
+            print('\nFile exists: adding KL divergence results')
             data = pd.read_csv(file_path, dtype={'songA': str, 'songB': str})
             for r in all_kldiv: 
                 mask = (data['songA'] == r[0]) & (data['songB'] == r[1])
