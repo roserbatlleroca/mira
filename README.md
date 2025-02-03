@@ -28,10 +28,9 @@ pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 **to run CLAP and DEfNet scores install pythorch...**
 
 ```
-pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html 
+pip3 install torch torchvision torchaudio 
 
 # note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
-### for H100 GPU: pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 **... and download corresponding models**
