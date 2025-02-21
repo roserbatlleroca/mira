@@ -2,7 +2,7 @@
 
 MiRA (**M**us**i**c **R**eplication **A**ssessment) tool is a model-independent open evaluation method based on four diverse audio music similarity metrics to assess exact data replication of the training set. 
 
-For detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](https://arxiv.org/abs/2407.14364). 
+For a detailed description of the MiRA tool, check out our article [Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio](https://zenodo.org/records/14877501). 
 
 
 ## 🚀 quick start 
@@ -30,7 +30,7 @@ pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 ```
 pip3 install torch torchvision torchaudio 
 
-# note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
+# note that you can also install pytorch by following the official instructions (https://pytorch.org/get-started/locally/)
 ```
 
 **... and download corresponding models**
@@ -49,7 +49,7 @@ wget -O misc/discogs_track_embeddings-effnet-bs64-1.pb https://essentia.upf.edu/
 Run an evaluation by calling `mira` and indicating
 the directory of the reference folder (`reference_foldr`), the target folder (`target_folder`) and name of the evaluation or test (`eval_name`). 
 
-Registering results (`log`) is active by default. You can deactivate storing the results by setting log to `no` or you can specify your preferred directory (`log_directory`). If you do not specify any `log` folder where results should be stored, MiRA will create a `log` folder in the current directory automatically.  
+Registering results (`log`) is active by default. You can deactivate storing the results by setting log to `no` or you can specify your preferred directory (`log_directory`). If you do not specify any `log` folder where results should be stored, MiRA will automatically create a `log` folder in the current directory.  
 
 MiRA will run the evaluation between the samples in the reference and target folder for four music similarity metrics: CLAP score, DEfNet score, Cover Identification (CoverID) and KL divergence. However, you can specify a metric with `-m` argument. 
 
@@ -61,7 +61,7 @@ mira <reference_folder> <target_folder> --eval_name <eval_name> {--log <no/log_d
 
 
 ## 💻 directly running evaluation metrics
-If you want to deep in MiRA tool instead of directly using the pip library, you need to install the appropiate environment. Please, run the following commands: 
+If you want to deep in MiRA tool instead of directly using the pip library, you need to install the appropriate environment. Please, run the following commands: 
 
 **clone github repository:**
 ```
@@ -87,7 +87,7 @@ pip install 'git+https://github.com/kkoutini/passt_hear21@0.0.19'
 ```
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0+cu113 -f https://download.pytorch.org/whl/torch_stable.html 
 
-# note that you can also install pytorch by following the official instruction (https://pytorch.org/get-started/locally/)
+# note that you can also install pytorch by following the official instructions (https://pytorch.org/get-started/locally/)
 
 cd misc/ 
 wget https://huggingface.co/lukewys/laion_clap/blob/main/music_audioset_epoch_15_esc_90.14.pt
@@ -97,7 +97,7 @@ wget https://essentia.upf.edu/models/feature-extractors/discogs-effnet/discogs_t
 
 ### running evaluation metrics
 
-To execute the evaluation metrics, run the following command specifying the metric (`coverid`, `clap`, `defnet` or `kld`), the directory of the reference folder (`a_dir`), the target folder (`b_dir`) and name of the evaluation or test (`eval_name`). Log is active by default. You can deactivate storing the results by setting log to `no`.  
+To execute the evaluation metrics, run the following command specifying the metric (`coverid`, `clap`, `defnet` or `kld`), the directory of the reference folder (`a_dir`), the target folder (`b_dir`) and name of the evaluation or test (`eval_name`). Log is active by default. You can deactivate storing the results by setting `log` to `no`.  
 
 ```
 cd src/mira_sim/
@@ -109,15 +109,14 @@ For KL divergence, you can also specify pretraining length by adding `--prelen <
 ## 📚 citation 
 
 ```
-@article{batlleroca2024towards,
-  title={Towards Assessing Data Replication in Music Generation with Music Similarity Metrics on Raw Audio},
-  author={Roser Batlle-Roca and Wei-Hisang Liao and Xavier Serra and Yuki Mitsufuji and Emilia Gómez},
-  journal={Proceedings of the 25th International Society for Music Information Retrieval Conference, San
-Francisco, United States},
-  year={2024}, 
-  eprint={2407.14364},
-  archivePrefix={arXiv}, 
-  url={https://arxiv.org/abs/2407.14364}, 
+@inproceedings{batlleroca2024towards,
+  author       = {Roser Batlle{-}Roca and Wei{-}Hsiang Liao and Xavier Serra and Yuki Mitsufuji and Emilia G{\'{o}}mez},
+  title        = {Towards Assessing Data Replication in Music Generation With Music Similarity Metrics on Raw Audio},
+  booktitle    = {Proceedings of the 25th International Society for Music Information Retrieval Conference, {ISMIR} 2024, San Francisco, California, {USA}, November 10-14, 2024},
+  pages        = {1004--1011},
+  year         = {2024},
+  url          = {https://doi.org/10.5281/zenodo.14877501},
+  doi          = {10.5281/ZENODO.14877501}
 }
 ```
 
